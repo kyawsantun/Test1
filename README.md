@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+[![Build Status](https://travis-ci.org/Bitsino/BitsinoDice.svg?branch=master)](https://travis-ci.org/Bitsino/BitsinoDice)
 
-You can use the [editor on GitHub](https://github.com/kyawsantun/Test1/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Bitcoin Dice Gambling Site
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+![](http://i.imgur.com/BY4bmB3.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Provably Fair
 
-```markdown
-Syntax highlighted code block
+Bitcoinary implements a provably fair gaming engine. Provably fair works by publishing the hash of a secret before a game. At the end of the day, the secret is released and can be compared to the result. Publishing the hash of the secret prevents the operator from changing the secret and by extension, the result of the game.
 
-# Header 1
-## Header 2
-### Header 3
+## Installation
 
-- Bulleted
-- List
+Live demonstration https://bitsinodice.com
 
-1. Numbered
-2. List
+Bitcoinary is designed to install easily into the cloud using Heroku. You can also install to your own server.
 
-**Bold** and _Italic_ and `Code` text
+Click the link below to install the software directly to Heroku.
 
-[Link](url) and ![Image](src)
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/onchain/bitcoinary)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Security
 
-### Jekyll Themes
+### BitsinoDice does not require you to install bitcoind
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kyawsantun/Test1/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Bitcoinary uses the chain.com API to get balance information and to scan for incoming Bitcoins. As no private keys are kept on the site we remove some major security issues.
 
-### Support or Contact
+### Cold storage and multi signature funds.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The site works off a Bitcoin master public key. Bitcoinary can then generate as many bitcoin public keys as it needs. ONCHAIN.IO which is the cold storage provider sweeps and incoming bitcoins daily into a bitcoin transaction. You can then safely sign this transaction to send the funds into cold storage.
+
+There are no private keys on ONCHAIN.IO or Bitcoinary.
+
+Bitcoinary makes a daily payout request to ONCHAIN.IO. Basically for users who are winners they can select to withdraw funds. Bitcoinary sends a payout request to ONCHAIN.IO which is turned into a bitcoin transaction paying the users.
+
+You get a notification from ONCHAIN.IO and can decide wether or not to sign this transaction.
+
